@@ -1,0 +1,19 @@
+WELCOME = You may not recognize much among these mountains. Don't worry, you're not the only one. Join us on a short tour to discover Andorra's shape and habitats.
+
+OVERVIEW = The 468km² of Andorra make it one of the smallest countries in the world, and its capital, Andorra la Vella, the highest in Europe. With a minimum height of 840m in the Runer river and a maximum of 2492m in the Comapedrosa peak, the habitats it encompasses are very diverse.
+
+URBAN = The majority of towns and urban populations are located at the bottom of the valleys, and account a few more than 2% of the country.
+
+FOREST = Around 40% of the territory are forests, located between 840 m and 1900 m of altitude. 90% are coniferous forests, dominated by Scots pine, Bog pine and Silver fir. The rest are deciduous forests, like the Evergreen oak, the oak or Birch.
+
+BRUSH = Brush account for 10% of the territory. They are dominated by boxwood until 1600 m of altitude, and by alpenrose from this point up.
+
+GRASSLAND = Grasslands account for 27% of the territory. Most of them correspond to alpine pastures located between the upper limit of the forest and the rocky peaks and carenes. The rest corresponds to cultivated meadows and grasslands near urban areas.
+
+ROCKS = Screes and bare soil account for 20% of the territory and are mostly located in the highest areas of the mountains, where the climatic conditions do not favour the presence of vegetation.
+
+WATER = Rivers, lakes and basses account for 0.5% of total surface. The lakes of Juclar, the lakes of Tristaina or the lake of Illa stand out. Rivers have a total length of aroundy 260 km, the main ones being the Valira d'Orient, the Valira del Nord and the Gran Valira.
+
+SNOW = Much of the country is covered by permanent snow from December to April. By means of satellite imagery we can monitor and study the evolution of the snow cover every 5 days. Look at this, it's the snow coverage on a random 2020 January day.
+
+CONCLUSION = Look at the mountains again. You may be able to identify a lot more things now.

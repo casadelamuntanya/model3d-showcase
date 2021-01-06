@@ -1,0 +1,19 @@
+WELCOME = Potser no reconeixes gran cosa entre aquestes muntanyes. Tranquil, no ets l’únic. Acompanya’ns en un breu recorregut per descobrir el relleu i els hàbitats d'Andorra.
+
+OVERVIEW = Els 468 km² d'Andorra el col·loquen com un dels països més petits del món i la seva capital, Andorra la Vella, com la més alta d'Europa. Amb una cota mínima de 840 m al riu Runer i la màxima de 2942 m al Pic de Comapedrosa, els hàbitats que s'hi troben són molt diversos.
+
+URBAN = La majoria de nuclis urbans i poblacions es troben al fons de les valls, i representen poc més del 2% del país.
+
+FOREST = Prop del 40% del territori són boscos, situats entre els 840 m i els 1900 m d'altitud. El 90% són boscos de coníferes, dominats pel Pi roig, el Pi negre i l'Avet. La resta són boscos caducifolis, com les alzinedes, les rouredes o els bedollars.
+
+BRUSH = Els matollars representen el 10% del territori. Estan dominats pel boix fins als 1600 m d'altitud; a partir d'aquesta cota estan dominats per l'abarset.
+
+GRASSLAND = Els prats i les pastures representen el 27% del territori. La majoria correspon a pastures alpines situades entre el límit superior del bosc i els cims rocosos dels pics i carenes. La resta correspon a prats i herbassars cultivats prop de zones urbanes.
+
+ROCKS = Els roquers i sols nus representen el 20% del territori i majoritàriament es localitzen a les zones de major altitud de les muntanyes, on les condicions climàtiques no afavoreixen la presència de cap mena de vegetació.
+
+WATER = Els rius, estanys i basses suposen el 0.5% de la superfície total. Destaquen els estanys de Juclar, els estanys de Tristaina o l'estany de l'Illa. Els rius tenen una longitud total d'uns 260 km, sent els principals el Valira d'Orient, el Valira del Nord i el Gran Valira.
+
+SNOW = Gran part del terreny d'Andorra està cobert per neu permanent de desembre a abril. Mitjançant imatges per satèl·lit podem monitorar i estudiar l'evolució del mantell nival cada 5 dies. Fixa't, aquesta és la coberta de neu un dia de gener de 2020.
+
+CONCLUSION = Torna a donar un cop d'ull a les muntanyes, de ben segur ara ets capaç d'identificar moltes més coses.
