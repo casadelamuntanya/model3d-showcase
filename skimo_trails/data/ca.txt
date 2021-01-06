@@ -1,0 +1,12 @@
+INSIGHT_DISTANCE = Distància
+INSIGHT_DROP = Desnivell
+INSIGHT_DURATION = Durada
+LEGEND_PROVISIONING = Avituallament
+
+skimo2 = Skimo4 és una travessa d'esquí de muntanya de llarga distància per equips de 2 o 3 persones, en un recorregut adaptat a les capacitats físiques de Cadets i Júniors que enllaça la Vall de Sorteny amb la estació d'Ordino-Arcalís.
+
+skimo4 = Skimo4 és una travessa d'esquí de muntanya de llarga distància per equips de 2 o 3 persones, en un recorregut d'alta muntanya que enllaça les estacions de Grau Roig i Ordino-Arcalís amb un recorregut més tècnic.
+
+skimo6 = Skimo6 és una travessa d'esquí de muntanya de llarga distància per equips de 2 o 3 persones, en un espectacular recorregut d'alta muntanya sense grans dificultats tècniques dins la Vall del Madriu-Perafita-Claror.
+
+skimo10 = Skimo10 és una travessa d'esquí de muntanya de llarga distància per equips de 2 o 3 persones amb un recorregut d'alta muntanya a través de dues valls que enllaça les estacions de Naturlandia, Grau Roig i Ordino-Arcalís en dues etapes.
