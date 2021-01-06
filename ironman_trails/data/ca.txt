@@ -1,0 +1,4 @@
+INSIGHT_DISTANCE = Distància
+INSIGHT_DROP = Desnivell
+INSIGHT_DURATION = Durada
+LEGEND_PROVISIONING = Avituallament
