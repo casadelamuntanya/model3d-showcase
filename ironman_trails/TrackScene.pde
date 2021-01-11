@@ -41,6 +41,15 @@ class TrackScene implements Scene {
     if (FEATURES != null) FEATURES.draw(renderer);
     TRAIL.draw(renderer);
 
+    renderer.pushStyle();
+    if (DICTIONARY != null) {
+      renderer.textAlign(LEFT, TOP);
+      renderer.fill(#ffffff);
+      renderer.textLeading(14);
+      renderer.text(DICTIONARY.get(ID), 390, 965, 460, 130);
+    }
+    renderer.popStyle();
+    
     renderer.image(LOGO, 875, 955, 80, 80);
 
     drawInsight(renderer, 1000, 980, "INSIGHT_DISTANCE", DISTANCE);
