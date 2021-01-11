@@ -61,10 +61,10 @@ class TrackScene implements Scene {
     renderer.textSize(12);
     renderer.textAlign(CENTER, BOTTOM);
     renderer.text(DICTIONARY.get("LEGEND_PROVISIONING"), 1420, 980);
-    drawPulse(renderer, 1420, 1000, 0);
-    drawPulse(renderer, 1420, 1000, 16.6);
+    drawPulse(renderer, 1420, 1005, 0);
+    drawPulse(renderer, 1420, 1005, 16.6);
     renderer.fill(#ff0000);
-    renderer.circle(1420, 1000, 10);
+    renderer.circle(1420, 1005, 10);
     
     renderer.popStyle();
   }
@@ -90,7 +90,7 @@ class TrackScene implements Scene {
   @Override
   public void onEnter() {
     Drawer progress = new ProgressFeatureDrawer(PAPPLET, 50).head(10);
-    TRAIL.setDrawer(new ColorDrawer(progress, #ff0000).strokeWeight(3));
+    TRAIL.setDrawer(new ColorDrawer(progress, #ff0000).strokeWeight(2));
   }
   
   @Override

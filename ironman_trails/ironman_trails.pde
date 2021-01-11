@@ -42,7 +42,7 @@ void setup() {
   Facade<Feature> tracks = factory.load("ironman.geojson");
 
   Facade<Feature> provisionings = factory.load("provisionings.geojson");
-  provisionings.setDrawer(new PulseFeatureDrawer(this, 10, 50, #ff0000));
+  provisionings.setDrawer(new PulseFeatureDrawer(this, 15, 50, #ff0000));
 
   SceneCollection scenesCollection = new SceneCollection();
 
