@@ -3,7 +3,7 @@ INSIGHT_DROP = Desnivell
 INSIGHT_DURATION = Durada
 LEGEND_PROVISIONING = Avituallament
 
-7k5 = És una ruta molt atractiva i de dificultat molt accessible. El seu punt més important és el Roc de la Cauba, un balcó panoràmic sobre la vall del nord del Principat.
+7k5 = És una ruta molt atractiva i de dificultat molt accessible. Durant tot el recorregut trobem uns balcons panoràmics espectaculars sobre tota la Vall d'Ordino, passant per la Creu de Noral i pel famós Bosc Màgic del Bosc Viu.
 
 25k = Recorregut de dificultat mitjana. El punt més especial és el Pic de Casamanya, una de les muntanyes més emblemàtiques del país amb unes vistes inigualables. En la segona part del recorregut, els atletes passen pel Roc de la Cauba, un balcó panoràmic de la zona nord del país.
 
