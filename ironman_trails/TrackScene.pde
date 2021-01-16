@@ -28,10 +28,9 @@ class TrackScene implements Scene {
     DROP = TRAIL.getProperty("drop_up") + "m";
     DecimalFormat df = new DecimalFormat("0.#");
     DISTANCE = df.format(TRAIL.getProperty("distance")) + "km";
-    int duration = ((int) TRAIL.getProperty("duration_min") + (int) TRAIL.getProperty("duration_max")) / 2;
+    int duration = (int) TRAIL.getProperty("duration");
     int hours = duration / 60;
-    int mins = duration % 60;
-    DURATION = hours + "h" + mins;
+    DURATION = hours + "h";
   }
   
   @Override
@@ -53,8 +52,8 @@ class TrackScene implements Scene {
     renderer.image(LOGO, 875, 955, 80, 80);
 
     drawInsight(renderer, 1000, 980, "INSIGHT_DISTANCE", DISTANCE);
-    drawInsight(renderer, 1130, 980, "INSIGHT_DROP", DROP);
-    drawInsight(renderer, 1260, 980, "INSIGHT_DURATION", DURATION);
+    drawInsight(renderer, 1150, 980, "INSIGHT_DROP", DROP);
+    drawInsight(renderer, 1290, 980, "INSIGHT_DURATION", DURATION);
     
     /* Workaround to draw pulse legend */
     renderer.fill(#ff0000);
