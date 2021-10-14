@@ -19,7 +19,7 @@ class LanduseScene implements Scene {
     if (DICTIONARY != null) {
       renderer.textAlign(LEFT, TOP);
       renderer.fill(#ffffff);
-      renderer.textSize(10);
+      renderer.textSize(11);
       renderer.textLeading(12);
       renderer.text(DICTIONARY.get(NAME, "ca"), 230, 635, 310, 80);
       renderer.fill(#999999);

@@ -14,6 +14,9 @@ WarpCanvas canvas;
 final int SCENE_INTERVAL = 40;
 SceneCollection scenes;
 
+PFont roboto;
+PFont robotoBold;
+
 // Canvas bounds
 private final LatLon[] bounds = new LatLon[] {
   new LatLon(42.691138, 1.369565),
@@ -26,9 +29,9 @@ void setup() {
   fullScreen(P3D, 2);
   frameRate(60);
 
-  // Load a big text size to allow multiple sizes with good quality
-  textSize(128);
-  textSize(16);
+  roboto = createFont("Roboto", 11, true);
+  robotoBold = createFont("Roboto", 20, true);
+  textFont(roboto);
 
   Dictionary dictionary = new Dictionary(new DictionaryFactoryTxt(this));
   dictionary.load("ca", "ca.txt");

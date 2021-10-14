@@ -44,7 +44,8 @@ class TrackScene implements Scene {
     if (DICTIONARY != null) {
       renderer.textAlign(LEFT, TOP);
       renderer.fill(#ffffff);
-      renderer.textSize(10);
+      renderer.textFont(roboto);
+      renderer.textSize(11);
       renderer.textLeading(12);
       renderer.text(DICTIONARY.get(ID), 230, 635, 310, 80);
     }
@@ -58,7 +59,8 @@ class TrackScene implements Scene {
     
     /* Workaround to draw pulse legend */
     renderer.fill(#ff0000);
-    renderer.textSize(10);
+    renderer.textFont(roboto);
+    renderer.textSize(11);
     renderer.textAlign(CENTER, BOTTOM);
     renderer.text(DICTIONARY.get("LEGEND_PROVISIONING"), 900, 690);
     drawPulse(renderer, 900, 665, 0);
@@ -79,9 +81,11 @@ class TrackScene implements Scene {
   private void drawInsight(PGraphics renderer, int x, int y, String name, String value) {
     renderer.pushStyle();
     renderer.fill(#888888);
-    renderer.textSize(10);
+    renderer.textFont(roboto);
+    renderer.textSize(11);
     renderer.text(DICTIONARY.get(name), x, y);
     renderer.fill(#ffffff);
+    renderer.textFont(robotoBold);
     renderer.textSize(20);
     renderer.text(value, x, y + 20);
     renderer.popStyle();

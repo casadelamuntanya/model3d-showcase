@@ -12,6 +12,8 @@ WarpCanvas canvas;
 final int SCENE_INTERVAL = 40;
 SceneCollection scenes;
 
+PFont roboto;
+
 // Canvas bounds
 private final LatLon[] bounds = new LatLon[] {
   new LatLon(42.691138, 1.369565),
@@ -23,6 +25,9 @@ private final LatLon[] bounds = new LatLon[] {
 void setup() {
   fullScreen(P3D, 2);
   frameRate(60);
+
+  roboto = createFont("Roboto", 11, true);
+  textFont(roboto);
 
   surface = new WarpSurface(this, "../_commons/warpsurface_10x10.xml");
   canvas = new WarpCanvas(this, "../_commons/orto.png", bounds);
