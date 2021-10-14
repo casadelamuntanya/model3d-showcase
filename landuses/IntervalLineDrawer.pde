@@ -18,6 +18,7 @@ public class IntervalLineDrawer implements Drawer<IntervalSceneIterator> {
     renderer.pushMatrix();
     renderer.translate(ORIGIN_X, ORIGIN_Y);
     renderer.textAlign(RIGHT, CENTER);
+    renderer.textSize(8);
     if (iterator.isPaused()) renderer.text("PAUSED", -barWidth - 5, -1);
     renderer.rect(0, 0, -barWidth, 2);
     renderer.popMatrix();

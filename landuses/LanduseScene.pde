@@ -14,18 +14,18 @@ class LanduseScene implements Scene {
   
   @Override
   public void draw(PGraphics renderer) {
-    pushStyle();
+    renderer.pushStyle();
     if(FEATURES != null) FEATURES.draw(renderer);
     if (DICTIONARY != null) {
-      textAlign(LEFT, TOP);
-      fill(#ffffff);
-      textLeading(14);
-      text(DICTIONARY.get(NAME, "ca"), 400, 965, 450, 130);
-      fill(#888888);
-      text(DICTIONARY.get(NAME, "en"), 1000, 965, 450, 130);
+      renderer.textAlign(LEFT, TOP);
+      renderer.fill(#ffffff);
+      renderer.textSize(10);
+      renderer.textLeading(12);
+      renderer.text(DICTIONARY.get(NAME, "ca"), 230, 635, 310, 80);
+      renderer.fill(#999999);
+      renderer.text(DICTIONARY.get(NAME, "en"), 625, 635, 310, 80);
     }
-
-    popStyle();
+    renderer.popStyle();
   }
   
   @Override
