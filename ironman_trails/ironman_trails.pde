@@ -11,8 +11,8 @@ import java.util.function.Predicate;
 WarpSurface surface;
 WarpCanvas canvas;
 
-int interval = 75;
-ScenesIterator scenes;
+final int SCENE_INTERVAL = 75;
+SceneCollection scenes;
 
 // Canvas bounds
 private final LatLon[] bounds = new LatLon[] {
@@ -24,6 +24,7 @@ private final LatLon[] bounds = new LatLon[] {
 
 void setup() {
   fullScreen(P3D);
+  frameRate(60);
 
   // Load a big text size to allow multiple sizes with good quality
   textSize(128);
@@ -44,7 +45,7 @@ void setup() {
   Facade<Feature> provisionings = factory.load("provisionings.geojson");
   provisionings.setDrawer(new PulseFeatureDrawer(this, 15, 50, #ff0000));
 
-  SceneCollection scenesCollection = new SceneCollection();
+  scenes = new SceneCollection();
 
   PImage logo = loadImage("logo.png");
   String[] trackIDs = new String[] { "7k5", "25k", "55k", "125k" };
@@ -52,11 +53,18 @@ void setup() {
     Feature track = tracks.find(Predicates.hasProperty("id", id));
     Facade<Feature> features = provisionings.filter(Predicates.hasProperty("track", id));
     Scene scene = new TrackScene(this, id, logo, dictionary, track, features);
-    scenesCollection.add(scene);
+    scenes.add(scene);
   }
   
-  scenes = new ScenesIteratorKeyboard(this, LEFT, RIGHT, new ScenesIteratorInterval(this, interval, ' ', scenesCollection));
-  scenes.init();
+  // Switch scenes at a regular time interval
+  SceneIterator intervalIterator = new IntervalSceneIterator(this, SCENE_INTERVAL, ' ');
+  Drawer intervalDrawer = new IntervalLineDrawer(1500, 1056, 1157);
+  intervalIterator.setDrawer(intervalDrawer);
+  scenes.addIterator(intervalIterator);
+  
+  // Switch scenes on LEFT and RIGHT arrow key press
+  SceneIterator keyIterator = new KeySceneIterator(this, LEFT, RIGHT);
+  scenes.addIterator(keyIterator);
 }
 
 void draw() {

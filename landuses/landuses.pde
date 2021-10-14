@@ -9,8 +9,8 @@ import com.vividsolutions.jts.geom.CoordinateSequenceFilter;
 WarpSurface surface;
 WarpCanvas canvas;
 
-int interval = 40;
-ScenesIterator scenes;
+final int SCENE_INTERVAL = 40;
+SceneCollection scenes;
 
 // Canvas bounds
 private final LatLon[] bounds = new LatLon[] {
@@ -22,6 +22,7 @@ private final LatLon[] bounds = new LatLon[] {
   
 void setup() {
   fullScreen(P3D);
+  frameRate(60);
 
   surface = new WarpSurface(this, "../_commons/warpsurface_20x20.xml");
   canvas = new WarpCanvas(this, "../_commons/orto.png", bounds);
@@ -57,28 +58,41 @@ void setup() {
   
   Facade borders = factory.load("../_commons/border.geojson");
   borders.setDrawer(new ColorDrawer(new FeatureDrawer(), #ffffff).strokeWeight(2));
+
+  scenes = new SceneCollection();
+  scenes.add(new LanduseScene("WELCOME", dictionary, null));
+  scenes.add(new LanduseScene("OVERVIEW", dictionary, borders));
   
   Facade urbanFeatures = landuses.filter(Predicates.hasProperty("type", "TRANSPORT", "URBAN"));
-  Facade forestFeatures = landuses.filter(Predicates.hasProperty("sub_type", "FOREST_DENSE", "FOREST_CLEAR"));
-  Facade brushFeatures = landuses.filter(Predicates.hasProperty("sub_type", "BRUSH"));
-  Facade grasslandFeatures = landuses.filter(Predicates.hasProperty("type", "GRASSLAND"));
-  Facade rockFeatures = landuses.filter(Predicates.hasProperty("type", "ROCK", "BARE_SOIL"));
-  Facade waterFeatures = landuses.filter(Predicates.hasProperty("type", "WATER"));
+  scenes.add(new LanduseScene("URBAN", dictionary, urbanFeatures));
   
-  SceneCollection scenesCollection = new SceneCollection();
-  scenesCollection.add(new LanduseScene("WELCOME", dictionary, null));
-  scenesCollection.add(new LanduseScene("OVERVIEW", dictionary, borders));
-  scenesCollection.add(new LanduseScene("URBAN", dictionary, urbanFeatures));
-  scenesCollection.add(new LanduseScene("FOREST", dictionary, forestFeatures));
-  scenesCollection.add(new LanduseScene("BRUSH", dictionary, brushFeatures));
-  scenesCollection.add(new LanduseScene("GRASSLAND", dictionary, grasslandFeatures));
-  scenesCollection.add(new LanduseScene("ROCKS", dictionary, rockFeatures));
-  scenesCollection.add(new LanduseScene("WATER", dictionary, waterFeatures));
-  scenesCollection.add(new LanduseScene("SNOW", dictionary, snow));
-  scenesCollection.add(new LanduseScene("CONCLUSION", dictionary, null));
+  Facade forestFeatures = landuses.filter(Predicates.hasProperty("sub_type", "FOREST_DENSE", "FOREST_CLEAR"));
+  scenes.add(new LanduseScene("FOREST", dictionary, forestFeatures));
+  
+  Facade brushFeatures = landuses.filter(Predicates.hasProperty("sub_type", "BRUSH"));
+  scenes.add(new LanduseScene("BRUSH", dictionary, brushFeatures));
+  
+  Facade grasslandFeatures = landuses.filter(Predicates.hasProperty("type", "GRASSLAND"));
+  scenes.add(new LanduseScene("GRASSLAND", dictionary, grasslandFeatures));
+  
+  Facade rockFeatures = landuses.filter(Predicates.hasProperty("type", "ROCK", "BARE_SOIL"));
+  scenes.add(new LanduseScene("ROCKS", dictionary, rockFeatures));
+  
+  Facade waterFeatures = landuses.filter(Predicates.hasProperty("type", "WATER"));
+  scenes.add(new LanduseScene("WATER", dictionary, waterFeatures));
+  
+  scenes.add(new LanduseScene("SNOW", dictionary, snow));
+  scenes.add(new LanduseScene("CONCLUSION", dictionary, null));
 
-  scenes = new ScenesIteratorInterval(this, interval, ' ', new ScenesIteratorKeyboard(this, LEFT, RIGHT, scenesCollection));
-  scenes.init();
+  // Switch scenes at a regular time interval
+  SceneIterator intervalIterator = new IntervalSceneIterator(this, SCENE_INTERVAL, ' ');
+  Drawer intervalDrawer = new IntervalLineDrawer(1500, 1056, 1157);
+  intervalIterator.setDrawer(intervalDrawer);
+  scenes.addIterator(intervalIterator);
+  
+  // Switch scenes on LEFT and RIGHT arrow key press
+  SceneIterator keyIterator = new KeySceneIterator(this, LEFT, RIGHT);
+  scenes.addIterator(keyIterator);
 }
 
 void draw() {
