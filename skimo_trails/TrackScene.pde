@@ -45,26 +45,29 @@ class TrackScene implements Scene {
     if (DICTIONARY != null) {
       renderer.textAlign(LEFT, TOP);
       renderer.fill(#ffffff);
-      renderer.textLeading(14);
-      renderer.text(DICTIONARY.get(ID), 400, 965, 450, 130);
+      renderer.textFont(roboto);
+      renderer.textSize(11);
+      renderer.textLeading(12);
+      renderer.text(DICTIONARY.get(ID), 230, 635, 310, 80);
     }
     renderer.popStyle();
 
-    renderer.image(LOGO, 875, 955, 80, 80);
+    renderer.image(LOGO, 550, 635, 60, 60);
 
-    drawInsight(renderer, 1000, 980, "INSIGHT_DISTANCE", DISTANCE);
-    drawInsight(renderer, 1120, 980, "INSIGHT_DROP", DROP);
-    drawInsight(renderer, 1260, 980, "INSIGHT_DURATION", DURATION);
+    drawInsight(renderer, 635, 660, "INSIGHT_DISTANCE", DISTANCE);
+    drawInsight(renderer, 705, 660, "INSIGHT_DROP", DROP);
+    drawInsight(renderer, 790, 660, "INSIGHT_DURATION", DURATION);
     
     /* Workaround to draw pulse legend */
     renderer.fill(#ff0000);
-    renderer.textSize(12);
+    renderer.textFont(roboto);
+    renderer.textSize(11);
     renderer.textAlign(CENTER, BOTTOM);
-    renderer.text(DICTIONARY.get("LEGEND_PROVISIONING"), 1420, 980);
-    drawPulse(renderer, 1420, 1000, 0);
-    drawPulse(renderer, 1420, 1000, 16.6);
+    renderer.text(DICTIONARY.get("LEGEND_PROVISIONING"), 900, 690);
+    drawPulse(renderer, 900, 665, 0);
+    drawPulse(renderer, 900, 665, 16.6);
     renderer.fill(#ff0000);
-    renderer.circle(1420, 1000, 10);
+    renderer.circle(900, 665, 10);
     
     renderer.popStyle();
   }
@@ -79,11 +82,13 @@ class TrackScene implements Scene {
   private void drawInsight(PGraphics renderer, int x, int y, String name, String value) {
     renderer.pushStyle();
     renderer.fill(#888888);
-    renderer.textSize(16);
+    renderer.textFont(roboto);
+    renderer.textSize(11);
     renderer.text(DICTIONARY.get(name), x, y);
     renderer.fill(#ffffff);
-    renderer.textSize(32);
-    renderer.text(value, x, y + 40);
+    renderer.textFont(robotoBold);
+    renderer.textSize(20);
+    renderer.text(value, x, y + 20);
     renderer.popStyle();
   }
 

@@ -14,6 +14,9 @@ WarpCanvas canvas;
 final int SCENE_INTERVAL = 40;
 SceneCollection scenes;
 
+PFont roboto;
+PFont robotoBold;
+
 // Canvas bounds
 private final LatLon[] bounds = new LatLon[] {
   new LatLon(42.691138, 1.369565),
@@ -23,17 +26,17 @@ private final LatLon[] bounds = new LatLon[] {
 };
 
 void setup() {
-  fullScreen(P3D);
+  fullScreen(P3D, 2);
   frameRate(60);
 
-  // Load a big text size to allow multiple sizes with good quality
-  textSize(128);
-  textSize(16);
+  roboto = createFont("Roboto", 11, true);
+  robotoBold = createFont("Roboto", 20, true);
+  textFont(roboto);
 
   Dictionary dictionary = new Dictionary(new DictionaryFactoryTxt(this));
   dictionary.load("ca", "ca.txt");
 
-  surface = new WarpSurface(this, "../_commons/warpsurface_20x20.xml");
+  surface = new WarpSurface(this, "../_commons/warpsurface_10x10.xml");
   canvas = new WarpCanvas(this, "../_commons/orto.png", bounds);
   
   SurfaceMapper mapper = new SurfaceMapper(surface);
@@ -61,10 +64,11 @@ void setup() {
   }
   
   // Switch scenes at a regular time interval
-  SceneIterator intervalIterator = new IntervalSceneIterator(this, SCENE_INTERVAL, ' ');
-  Drawer intervalDrawer = new IntervalLineDrawer(1500, 1056, 1157);
+  IntervalSceneIterator intervalIterator = new IntervalSceneIterator(this, SCENE_INTERVAL, ' ');
+  Drawer intervalDrawer = new IntervalLineDrawer(965, 713, 760);
   intervalIterator.setDrawer(intervalDrawer);
   scenes.addIterator(intervalIterator);
+  intervalIterator.resume();
   
   // Switch scenes on LEFT and RIGHT arrow key press
   SceneIterator keyIterator = new KeySceneIterator(this, LEFT, RIGHT);
